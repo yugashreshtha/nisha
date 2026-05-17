@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Its Nisha Bakery</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fffdfd, #fff7fa, #fffdfd);
+      overflow-x: hidden;
+      color: #c46a87;
+    }
+
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      z-index: -1;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .blob1 {
+      width: 350px;
+      height: 350px;
+      background: rgba(244, 196, 212, 0.35);
+      top: -100px;
+      left: -100px;
+    }
+
+    .blob2 {
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 228, 236, 0.45);
+      bottom: -150px;
+      right: -100px;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-30px);
+      }
+    }
+
+    .sparkle {
+      position: fixed;
+      font-size: 30px;
+      animation: sparkle 4s linear infinite;
+      opacity: 0.7;
+      z-index: 1;
+    }
+
+    @keyframes sparkle {
+      0% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(20deg);
+      }
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      font-weight: 500;
+      color: #9f7280;
+      padding: 30px;
+      position: relative;
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255,255,255,0.7);
+      box-shadow: 0 20px 50px rgba(231, 84, 128, 0.12);
+
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.4);
+      box-shadow: 0 10px 40px rgba(255, 105, 180, 0.2);
+      border-radius: 28px;
+    }
+
+    .hero-card {
+      max-width: 760px;
+
+      padding: 75px 65px;
+      max-width: 900px;
+      animation: fadeUp 1.2s ease;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .mini-text {
+      letter-spacing: 5px;
+      font-size: 11px;
+      color: #b98a97;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 82px;
+      letter-spacing: -4px;
+      line-height: 0.9;
+      font-weight: 900;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #b76e79, #d98ca1, #e8b7c8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: #ff5da2;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 18px 40px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.4s;
+      margin: 10px;
+    }
+
+    .btn-pink {
+      background: linear-gradient(to right, #c88a9b, #dca5b5);
+      color: white;
+      box-shadow: 0 12px 30px rgba(160, 110, 128, 0.18);
+    }
+
+    .btn-white {
+      border: 1px solid rgba(180,140,150,0.15);
+      background: white;
+      color: #ff5da2;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 50px auto 0;
+      padding: 0 20px;
+    }
+
+    .feature {
+      background: rgba(255,255,255,0.65);
+
+      padding: 25px;
+      text-align: center;
+      transition: 0.4s;
+    }
+
+    .feature:hover {
+      transform: translateY(-10px);
+    }
+
+    .gallery {
+      padding: 100px 30px;
+    }
+
+    .gallery-title {
+      text-align: center;
+      font-size: 58px;
+      letter-spacing: -2px;
+      color: #b67888;
+      margin-bottom: 60px;
+      font-weight: 900;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .img-box {
+      overflow: hidden;
+      border-radius: 28px;
+      position: relative;
+      height: 500px;
+      box-shadow: 0 25px 60px rgba(90, 60, 70, 0.08);
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.7s;
+    }
+
+    .img-box:hover img {
+      transform: scale(1.12);
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(70, 40, 50, 0.35), transparent);
+    }
+
+    .tag {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      padding: 12px 24px;
+      border-radius: 100px;
+      color: white;
+      font-weight: 600;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.2);
+    }
+
+    .marquee {
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 25px 0;
+      background: linear-gradient(to right, #d8a3b2, #e7c2ce);
+      color: white;
+      font-size: 24px;
+      letter-spacing: 2px;
+      font-weight: 800;
+    }
+
+    .marquee span {
+      display: inline-block;
+      animation: marquee 18s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    footer {
+      padding: 120px 30px;
+      text-align: center;
+    }
+
+    .footer-box {
+      max-width: 800px;
+      margin: auto;
+      padding: 60px;
+    }
+
+    .footer-title {
+      font-size: 52px;
+      letter-spacing: -2px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .footer-text {
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+
+    @media(max-width:768px) {
+      h1 {
+        font-size: 70px;
+      }
+
+      .gallery-title,
+      .footer-title {
+        font-size: 45px;
+      }
+
+      .hero-card,
+      .footer-box {
+        padding: 40px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+
+  <div class="sparkle" style="top:10%; left:8%;">✨</div>
+  <div class="sparkle" style="top:25%; right:10%;">🎀</div>
+  <div class="sparkle" style="bottom:20%; left:15%;">🍓</div>
+  <div class="sparkle" style="bottom:10%; right:8%;">🩷</div>
+
+  <section class="hero">
+    <div class="glass hero-card">
+      <img src="profile.jpg" alt="Its Nishaaaaaa" style="width:130px;height:130px;border-radius:50%;object-fit:cover;margin-bottom:25px;border:6px solid rgba(255,255,255,0.7);box-shadow:0 10px 30px rgba(231,84,128,0.25);">
+      <p class="mini-text">BAKER 🎂 • Kolkata • Handmade</p>
+
+      <h1>Nisha's<br>Bakery</h1>
+
+      <p class="subtitle">✨ Where every bite is made with beauty & love</p>
+
+      <div style="margin-bottom:40px; color:#d85b8c; font-size:17px; font-weight:500; line-height:1.8;">
+        📍 Kolkata <br>
+        📩 DM / WhatsApp to order
+      </div>
+
+      <a href="https://www.instagram.com/its__nishaaaaaa/" target="_blank" class="btn btn-pink">Instagram 💌</a>
+      <a href="https://wa.me/919755977245" target="_blank" class="btn btn-white">WhatsApp ✨</a>
+    </div>
+
+    <div class="features">
+      <div class="glass feature">🍰 Luxury Desserts</div>
+      <div class="glass feature">🎀 Signature Packaging</div>
+      <div class="glass feature">✨ Bespoke Cakes</div>
+      <div class="glass feature">🩷 Curated With Love</div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <h2 class="gallery-title">gallery ✨</h2>
+
+    <div class="gallery-grid">
+
+      <div class="img-box">
+        <img src="photo1.jpg" alt="Cake">
+        <div class="overlay"></div>
+        <div class="tag">aesthetic brownies ✨</div>
+      </div>
+
+      <div class="img-box">
+        <img src="photo2.jpg" alt="Pastry">
+        <div class="overlay"></div>
+        <div class="tag">custom cakes 🎀</div>
+      </div>
+
+      <div class="img-box">
+        <img src="photo3.jpg" alt="Bakery">
+        <div class="overlay"></div>
+        <div class="tag">handmade chocolates 🩷</div>
+      </div>
+
+      <div class="img-box">
+        <img src="photo4.jpg" alt="Dessert">
+        <div class="overlay"></div>
+        <div class="tag">sweet little moments 🍓</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="marquee">
+    <span>
+      🎂 CUSTOMISED BROWNIES ✨ AESTHETIC CAKES 🍓 HANDMADE CHOCOLATES 🎀 SWEET LITTLE MOMENTS 🩷 KOLKATA BAKERY ✨
+    </span>
+  </section>
+
+  <footer>
+    <div class="glass footer-box">
+      <h2 class="footer-title">dm to order 💌</h2>
+
+      <p class="footer-text">luxury handcrafted desserts for your sweetest moments ✨</p>
+
+      <a href="tel:+919755977245" class="btn btn-pink">Call Now</a>
+      <a href="https://wa.me/919755977245" target="_blank" class="btn btn-white">WhatsApp</a>
+    </div>
+  </footer>
+
+  <script>
+    const sparkles = document.querySelectorAll('.sparkle');
+
+    sparkles.forEach((sparkle, index) => {
+      sparkle.style.animationDelay = `${index * 1.5}s`;
+    });
+  </script>
+
+</body>
+</html>
